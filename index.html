@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102b3f">
+<meta name="description" content="کتاب دیجیتالی توانمندی‌های اعضای انجمن سازندگان تجهیزات صنعتی ایران">
+<title>کتاب دیجیتالی توانمندی‌های اعضای انجمن سازندگان تجهیزات صنعتی ایران</title>
+<!-- بارگذاری بوت‌استرپ ۵ RTL -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+/* ---------- متغیرهای پایه (سبک ۱ — فیروزه‌ای حرفه‌ای) ---------- */
+:root{
+  --bg:#f3f6f8;--surface:#fff;--ink:#193247;--muted:#6e8190;--line:#dce5e9;
+  --primary:#137d78;--p2:#0f615e;--accent:#d7a64a;--soft:#eaf5f3;
+  --shadow:0 12px 35px #12304712;--radius:17px;--editor:#fff;--table:#f7fafb;
+  --toolbar:#f6f8f9;--border-soft:#e2e8eb;--th-ink:#fff;--ro:#fafbfc;--label:#40586a;
+}
+
+/* ---------- ۱۰ سبک رنگی قابل انتخاب (Style) ---------- */
+body[data-style="1"]{--bg:#f3f6f8;--surface:#fff;--ink:#193247;--muted:#6e8190;--line:#dce5e9;--primary:#137d78;--p2:#0f615e;--accent:#d7a64a;--soft:#eaf5f3;--editor:#fff;--table:#f7fafb;--toolbar:#f6f8f9;--border-soft:#e2e8eb;--th-ink:#fff;--ro:#fafbfc;--label:#40586a}
+body[data-style="2"]{--bg:#f1f5fa;--surface:#fff;--ink:#152c44;--muted:#68798c;--line:#d8e3ef;--primary:#1d4e89;--p2:#16406f;--accent:#3f8cff;--soft:#e8f0fb;--editor:#fff;--table:#f6f9fd;--toolbar:#f4f7fb;--border-soft:#dbe5f0;--th-ink:#fff;--ro:#f8fbff;--label:#3a5470}
+body[data-style="3"]{--bg:#f6f1e7;--surface:#fdfbf6;--ink:#33302a;--muted:#7d7466;--line:#e2d8c4;--primary:#6d5f42;--p2:#554a33;--accent:#b98a3e;--soft:#efe7d7;--editor:#fffdf8;--table:#faf6ed;--toolbar:#f4eee1;--border-soft:#e4dac6;--th-ink:#fdf8ec;--ro:#f7f2e7;--label:#5b5241}
+body[data-style="4"]{--bg:#f2f7f2;--surface:#fff;--ink:#1d3527;--muted:#6b8171;--line:#d7e6da;--primary:#2f7a4f;--p2:#245f3d;--accent:#8dbf6a;--soft:#e8f4ea;--editor:#fff;--table:#f6faf6;--toolbar:#eff6f0;--border-soft:#dcebdf;--th-ink:#fff;--ro:#f7fbf8;--label:#3c5b47}
+body[data-style="5"]{--bg:#f5f2fa;--surface:#fff;--ink:#2b2140;--muted:#7a6f8f;--line:#e0d7ef;--primary:#5b3a8e;--p2:#472d72;--accent:#b592e6;--soft:#efe9f9;--editor:#fff;--table:#f8f5fc;--toolbar:#f2edfa;--border-soft:#e3dbf1;--th-ink:#fff;--ro:#faf8fd;--label:#4b3a68}
+body[data-style="6"]{--bg:#f0f8fc;--surface:#fff;--ink:#16333f;--muted:#5f7d8a;--line:#d3e7f0;--primary:#2a8fbd;--p2:#1f7297;--accent:#f2b134;--soft:#e6f4fb;--editor:#fff;--table:#f5fbfe;--toolbar:#ecf6fb;--border-soft:#d8e9f2;--th-ink:#fff;--ro:#f7fcfe;--label:#2c6076}
+body[data-style="7"]{--bg:#fbf2f5;--surface:#fff;--ink:#3d1f29;--muted:#8d6b76;--line:#f0d8e0;--primary:#a63a63;--p2:#8a2f52;--accent:#e59aad;--soft:#fbe9ef;--editor:#fff;--table:#fdf5f8;--toolbar:#fbeef3;--border-soft:#f2dce3;--th-ink:#fff;--ro:#fdf8fa;--label:#7a3450}
+body[data-style="8"]{--bg:#f4f5f7;--surface:#fff;--ink:#232931;--muted:#78828e;--line:#e2e5e9;--primary:#3f4854;--p2:#313945;--accent:#9aa5b1;--soft:#eef0f2;--editor:#fff;--table:#fafbfc;--toolbar:#f4f5f7;--border-soft:#e5e8ec;--th-ink:#fff;--ro:#fafbfc;--label:#4c5561}
+body[data-style="9"]{--bg:#fbf8ef;--surface:#fffdf8;--ink:#3a3018;--muted:#867a58;--line:#e8dcbb;--primary:#8a6d1f;--p2:#6d5518;--accent:#c9a227;--soft:#f7efd4;--editor:#fffdf7;--table:#fdfaf1;--toolbar:#f8f2df;--border-soft:#eadec2;--th-ink:#fffdf5;--ro:#fcf9f0;--label:#6b5a29}
+body[data-style="10"]{--bg:#eef4f1;--surface:#fff;--ink:#172b25;--muted:#647c73;--line:#d3e2da;--primary:#1f4d3d;--p2:#173b2f;--accent:#5fae8b;--soft:#e4f0ea;--editor:#fff;--table:#f4faf7;--toolbar:#e9f2ee;--border-soft:#d7e6de;--th-ink:#fff;--ro:#f6fbf8;--label:#2d4f43}
+
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Vazirmatn',Tahoma,sans-serif;font-size:14px;line-height:1.8;transition:background-color .28s ease,color .28s ease}
+
+.book-title-highlight{font-family:'Vazirmatn',Tahoma,sans-serif;color:var(--accent);font-weight:700;}
+
+.surface-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-bottom:16px;transition:all .28s ease}
+.section-title{font-size:15px;font-weight:800;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.section-title:before{content:'';width:4px;height:20px;border-radius:4px;background:var(--accent)}
+.quill-box{background:var(--editor);border:1px solid var(--line);border-radius:11px;overflow:hidden;transition:background-color .28s ease,border-color .28s ease}
+.qtoolbar{display:flex;align-items:center;flex-wrap:wrap;gap:4px;padding:7px;background:var(--toolbar);border-bottom:1px solid var(--line)}
+.qtoolbar button{background:var(--surface);border:1px solid var(--border-soft);border-radius:6px;min-width:30px;height:29px;color:var(--label);font-weight:700;font-size:12px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px}
+.qtoolbar button:hover{background:var(--soft)}
+.qtoolbar select, .qtoolbar input[type="color"]{border:1px solid var(--border-soft);border-radius:6px;padding:3px 6px;background:var(--surface);color:var(--ink);font-size:12px;height:29px;cursor:pointer;z-index:5;position:relative}
+.qtoolbar input[type="color"]{padding:1px;width:32px}
+
+.editor{
+  min-height:112px;
+  padding:13px 15px;
+  outline:none;
+  line-height:1.9;
+  background:var(--editor);
+  transition:background-color .28s ease;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  overflow-x: hidden;
+}
+.editor * {
+  max-width: 100% !important;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.editor img, .editor table, .editor iframe {
+  max-width: 100% !important;
+  height: auto;
+}
+.editor:empty:before{content:attr(data-placeholder);color:var(--muted);opacity:.6}
+.editor[contenteditable="false"]{background:var(--ro);cursor:default}
+
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
+.data-table{border-collapse:collapse;width:100%;min-width:620px;background:var(--table);border:1px solid var(--line)}
+.data-table th, .data-table td{border:1px solid var(--line);}
+.data-table th{background:var(--primary);color:var(--th-ink);text-align:right;padding:11px 13px;font-weight:700}
+.data-table td{padding:9px 11px;vertical-align:top}
+.data-table td[contenteditable="true"]{background:var(--editor);outline:none;min-width:150px;box-sizing:border-box;word-break:break-word;overflow-wrap:break-word}
+.data-table td[contenteditable="false"]{background:transparent;color:var(--ink);min-width:150px}
+
+.contact-grid{display:grid;grid-template-columns:1fr;gap:11px 14px}
+.contact-item label{display:block;font-weight:700;margin-bottom:5px;color:var(--label);font-size:12px}
+.contact-item .editor{min-height:65px}
+.certificate .editor{min-height:200px}
+.status{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
+.status.ok .dot{background:#2d9a68}
+.status.error .dot{background:#d94b3d}
+.quill-box.ro{border-style:dashed;border-color:var(--line)}
+.quill-box.ro .qtoolbar{display:none}
+.quill-box.ro .editor{padding-top:11px;padding-bottom:11px}
+.readonly-note{display:flex;align-items:center;gap:8px;background:var(--soft);border:1px dashed var(--line);color:var(--label);border-radius:11px;padding:9px 13px;font-size:12.5px;font-weight:600}
+.badge-style{background:var(--soft);color:var(--label);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px;font-weight:700;white-space:nowrap}
+.search-results{display:none;position:fixed;inset:0;background:#10283d70;z-index:20;padding:6vh 14px;overflow:auto}
+.search-results.show{display:block}
+.results-card{max-width:780px;margin:auto;background:#fff;border-radius:18px;padding:22px;box-shadow:0 20px 70px #0003;color:#193247}
+.footer{color:var(--muted);font-size:11px;text-align:center;margin-top:18px}
+.bootstrap-fallback .toast{display:none;position:fixed;z-index:1100;right:1rem;bottom:1rem;max-width:min(440px,calc(100vw - 2rem));padding:.8rem 1rem;background:#193247;color:#fff;border-radius:10px;box-shadow:0 10px 30px #0003}.bootstrap-fallback .toast.show{display:block}.bootstrap-fallback .modal{display:none;position:fixed;inset:0;z-index:1050;overflow:auto;background:#10283d70;padding:5vh 1rem}.bootstrap-fallback .modal.show{display:block}.bootstrap-fallback .modal-dialog{max-width:520px;margin:2rem auto}.bootstrap-fallback .modal-content{background:#fff;border-radius:14px;padding:1rem;box-shadow:0 15px 50px #0003}.bootstrap-fallback .modal-header,.bootstrap-fallback .modal-footer{display:flex;align-items:center;justify-content:space-between;gap:.5rem}.bootstrap-fallback .modal-footer{justify-content:flex-end;margin-top:1rem}
+</style>
+</head>
+<body data-style="1">
+<div class="container-xxl py-4">
+
+  <!-- هدر بالا -->
+  <header class="surface-card d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+    <div class="brand">
+      <small class="fw-bold" style="color:var(--primary)">انجمن سازندگان تجهیزات صنعتی ایران</small>
+      <h1 class="fs-4 fw-bold m-0"><span class="book-title-highlight">کتاب دیجیتالی</span> توانمندی‌های اعضای انجمن سازندگان تجهیزات صنعتی ایران</h1>
+    </div>
+    <div class="actions d-flex flex-wrap align-items-center gap-2">
+      <div class="input-group" style="width: min(240px, 100%);">
+        <input id="searchInput" class="form-control form-control-sm" aria-label="جست‌وجو" placeholder="جست‌وجو در کتاب…">
+        <button id="searchBtn" class="btn btn-sm text-white fw-bold" style="background:var(--primary);border-color:var(--primary)" type="button">جستجو</button>
+      </div>
+      <button class="btn btn-outline-success btn-sm fw-bold" id="exportBtn" type="button" title="دانلود فایل پشتیبان">دانلود نسخه پشتیبان</button>
+      <label class="btn btn-outline-primary btn-sm fw-bold mb-0" style="cursor:pointer;" title="بارگذاری فایل پشتیبان در مرورگر">
+        بازیابی از فایل <input type="file" id="importFile" accept=".json" style="display:none;">
+      </label>
+      <button class="btn btn-warning btn-sm text-dark fw-bold" id="registerBtn" type="button">ثبت‌نام</button>
+      <button class="btn btn-outline-secondary btn-sm fw-bold" id="loginBtn" type="button">ورود</button>
+      <button class="btn btn-outline-danger btn-sm fw-bold d-none" id="logoutBtn" type="button">خروج</button>
+      <span class="status ms-auto" id="status"><i class="dot"></i><span>آماده</span></span>
+    </div>
+  </header>
+
+  <!-- ناوبری صفحات -->
+  <nav class="surface-card py-2 px-3 d-flex flex-wrap align-items-center justify-content-between gap-2" aria-label="ناوبری صفحات">
+    <button class="btn btn-outline-secondary btn-sm" id="nextBtn" type="button">صفحه بعد ←</button>
+    <div class="d-flex align-items-center gap-2">
+      <input class="form-control form-control-sm text-center" id="pageNumber" type="number" min="1" max="95" value="1" style="width: 75px;" aria-label="شماره صفحه">
+      <span class="text-muted small">از ۹۵ صفحه</span>
+    </div>
+    <button class="btn btn-outline-secondary btn-sm" id="prevBtn" type="button">→ صفحه قبل</button>
+    <span class="text-muted small ms-auto" id="pageMeta"></span>
+  </nav>
+
+  <!-- نوار انتخاب سبک صفحه -->
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3 px-1">
+    <div class="d-flex flex-wrap align-items-center gap-2" id="styleBar">
+      <select class="form-select form-select-sm w-auto fw-bold" id="styleSelect" aria-label="انتخاب سبک این صفحه">
+        <option value="1">تم ۱ — فیروزه‌ای حرفه‌ای</option>
+        <option value="2">تم ۲ — آبی سازمانی</option>
+        <option value="3">تم ۳ — خاکی صنعتی</option>
+        <option value="4">تم ۴ — سبز طبیعت</option>
+        <option value="5">تم ۵ — بنفش رسمی</option>
+        <option value="6">تم ۶ — آبی روشن</option>
+        <option value="7">تم ۷ — رز شرکتی</option>
+        <option value="8">تم ۸ — مینیمال خاکستری</option>
+        <option value="9">تم ۹ — طلایی کلاسیک</option>
+        <option value="10">تم ۱۰ — سبز تیره</option>
+      </select>
+      <span class="badge-style" id="pageStyleBadge">سبک این صفحه: ۱</span>
+    </div>
+    <div class="readonly-note d-none" id="guestNote"></div>
+  </div>
+
+
+  <section class="surface-card" aria-labelledby="storageHeading">
+    <h2 class="section-title" id="storageHeading">وضعیت ذخیره‌سازی و پشتیبان‌گیری</h2>
+    <div class="d-flex flex-wrap gap-2 mb-3">
+      <button class="btn btn-success btn-sm fw-bold" id="saveLocalBtn" type="button">ذخیره محلی</button>
+      <button class="btn btn-outline-primary btn-sm fw-bold" id="syncBtn" type="button">همگام‌سازی</button>
+      <button class="btn btn-outline-success btn-sm fw-bold" id="csvBtn" type="button">خروجی CSV جدول‌ها</button>
+      <button class="btn btn-outline-secondary btn-sm fw-bold" id="backupsBtn" type="button">مدیریت نسخه‌های پشتیبان</button>
+    </div>
+    <div id="storageDetails" class="small" aria-live="polite">در حال بررسی وضعیت ذخیره‌سازی…</div>
+    <p class="small text-muted mb-0 mt-2">ذخیره‌سازی پایدار مانع پاک‌کردن دستی داده‌ها یا خرابی دستگاه نمی‌شود. نسخه‌های پشتیبان داخل مرورگر مستقل از مرورگر نیستند؛ فایل پشتیبان را جداگانه دانلود کنید.</p>
+  </section>
+
+  <main>
+    <!-- بخش معرفی شرکت -->
+    <section class="surface-card">
+      <h2 class="section-title">معرفی شرکت و توانمندی‌ها</h2>
+      <div class="quill-box" data-editor="intro">
+        <div class="qtoolbar" role="toolbar">
+          <button data-cmd="bold" title="درشت" type="button">B</button>
+          <button data-cmd="italic" title="خمیده" type="button"><i>I</i></button>
+          <button data-cmd="underline" title="زیرخط" type="button"><u>U</u></button>
+          <button data-cmd="strikeThrough" title="خط‌خورده" type="button"><s>S</s></button>
+          <select data-cmd="fontName" title="قلم (Font)">
+            <option value="Vazirmatn">وزیرمتن</option>
+            <option value="Tahoma">تاهما</option>
+            <option value="Arial">آریال</option>
+          </select>
+          <select data-cmd="fontSize" title="اندازه قلم (Font Size)">
+            <option value="3">متن معمولی</option>
+            <option value="1">بسیار کوچک (سایز ۱)</option>
+            <option value="2">کوچک (سایز ۲)</option>
+            <option value="4">بزرگ (سایز ۴)</option>
+            <option value="5">بسیار بزرگ (سایز ۵)</option>
+            <option value="6">بزرگ‌تر (سایز ۶)</option>
+            <option value="7">خیلی بزرگ (سایز ۷)</option>
+          </select>
+          <input type="color" data-cmd="foreColor" title="رنگ متن" value="#193247">
+          <button data-cmd="justifyRight" title="راست‌چین" type="button">راست</button>
+          <button data-cmd="justifyCenter" title="وسط‌چین" type="button">وسط</button>
+          <button data-cmd="justifyLeft" title="چپ‌چین" type="button">چپ</button>
+          <button data-cmd="justifyFull" title="توجیه/دوطرف‌کشش" type="button">کشش</button>
+          <button data-cmd="insertUnorderedList" title="فهرست نقطه‌ای" type="button">• فهرست</button>
+          <button data-cmd="insertOrderedList" title="فهرست شماره‌ای" type="button">۱. فهرست</button>
+          <button data-cmd="createLink" title="افزودن پیوند" type="button">🔗 پیوند</button>
+          <button data-cmd="removeFormat" title="پاک‌کردن قالب‌بندی" type="button">پاک‌سازی</button>
+        </div>
+        <div class="editor" contenteditable="false"></div>
+      </div>
+    </section>
+
+    <!-- بخش تجهیزات و فعالیت‌ها -->
+    <section class="surface-card">
+      <h2 class="section-title">تجهیزات، فعالیت‌ها و کاربردها</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>عنوان تجهیز / فعّالیت</th><th>رفرنس‌ها</th><th>کاربرد در صنایع</th></tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- گواهینامه‌ها و تماس -->
+    <div class="row g-3">
+      <div class="col-lg-5">
+        <section class="surface-card certificate h-100 mb-0">
+          <h2 class="section-title">عنوان گواهینامه‌ها یا سایر مدارک صلاحیت اخذ شده</h2>
+          <div class="quill-box" data-editor="certificates">
+            <div class="qtoolbar">
+              <button data-cmd="bold" title="درشت" type="button">B</button>
+              <button data-cmd="italic" title="خمیده" type="button"><i>I</i></button>
+              <button data-cmd="underline" title="زیرخط" type="button"><u>U</u></button>
+              <select data-cmd="fontName" title="قلم">
+                <option value="Vazirmatn">وزیرمتن</option>
+                <option value="Tahoma">تاهما</option>
+                <option value="Arial">آریال</option>
+              </select>
+              <select data-cmd="fontSize" title="اندازه قلم">
+                <option value="3">متن معمولی</option>
+                <option value="1">بسیار کوچک</option>
+                <option value="2">کوچک</option>
+                <option value="4">بزرگ</option>
+                <option value="5">بسیار بزرگ</option>
+              </select>
+              <input type="color" data-cmd="foreColor" title="رنگ متن" value="#193247">
+              <button data-cmd="justifyRight" title="راست‌چین" type="button">راست</button>
+              <button data-cmd="insertUnorderedList" title="فهرست" type="button">• فهرست</button>
+              <button data-cmd="createLink" title="پیوند" type="button">🔗</button>
+              <button data-cmd="removeFormat" title="پاک‌سازی" type="button">پاک‌سازی</button>
+            </div>
+            <div class="editor" contenteditable="false"></div>
+          </div>
+        </section>
+      </div>
+      <div class="col-lg-7">
+        <section class="surface-card h-100 mb-0">
+          <h2 class="section-title">نحوه تماس با دفتر مرکزی شرکت</h2>
+          <div class="contact-grid" id="contactGrid"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">ذخیره محلی مبتنی بر IndexedDB؛ سرور همگام‌سازی در این نسخه پیکربندی نشده است.</footer>
+</div>
+
+<!-- نتایج جستجو -->
+<div class="search-results" id="results">
+  <div class="results-card">
+    <div class="results-head d-flex justify-content-between align-items-center mb-3">
+      <h2 class="fs-5 m-0">نتایج جست‌وجو</h2>
+      <button class="btn btn-outline-secondary btn-sm" id="closeResults" type="button">بستن ×</button>
+    </div>
+    <div id="resultList"></div>
+  </div>
+</div>
+
+<!-- مودال ورود و ثبت‌نام -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">ثبت‌نام</h5>
+        <button type="button" class="btn-close" id="closeModal" aria-label="بستن"></button>
+      </div>
+      <form id="authForm">
+        <div class="modal-body">
+          <div class="row g-3" id="formFields"></div>
+          <div class="small text-muted mt-3">توجه: ویرایش محتوای هر صفحه فقط برای کاربر اختصاصی همان صفحه امکان‌پذیر است.</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" id="cancelModal">انصراف</button>
+          <button type="submit" class="btn btn-primary btn-sm" id="submitAuth">ادامه</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="toast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toastMessage">پیام</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="بستن"></button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(()=>{'use strict';
+const DB_NAME='iransei_database',DB_VERSION=1,STORE='pages',TOTAL=95;
+const LEGACY_DB='iran_industry_capability_book';
+const USERS_KEY='industry_users',SESSION_KEY='industry_session';
+const contacts=['تلفن','FAX','E-Mail','Website','Instagram','LinkedIn','نشانی'];
+
+const PAGE_DOMAINS = {
+  1: "azarenergy.com", 2: "aravalve.com", 3: "arsen-co.com", 4: "arvinsanat.com", 5: "aliaj-joosh.com",
+  6: "pars-pardaz.com", 7: "pakzy.com", 8: "sanco.ir", 9: "pkarvin.com", 10: "pumpturbine.ir",
+  11: "partosanat.com", 12: "berkeh.com", 13: "iipgroup.ir", 14: "pooladvarzan.com", 15: "piramoonco.ir",
+  16: "taban.compsore.ci", 17: "packmangroup.com", 18: "tasha-co.com", 19: "tamkar.com", 20: "gassoco.com",
+  21: "tavanmehvar.ir", 22: "turbinedar.com", 23: "gitco.ir", 24: "saabsteel.com", 25: "rastagroup.net",
+  26: "mppc.ir", 27: "hepcoir.com", 28: "sppc.ir", 29: "deylmanfilter.com", 30: "farassan.com",
+  31: "taftanblade.com", 32: "tivaa.ir", 33: "jahanayegh.com", 34: "daboosanat.com", 35: "ipcd.ir",
+  36: "zagroscompressor.com", 37: "azarestan.com", 38: "ciinc.ir", 39: "sandroos.com", 40: "parseal.com",
+  41: "sinacontrol.com", 42: "vb-valves.com", 43: "azarj.ir", 44: "azarab.ir", 45: "navidsahand.com",
+  46: "pumpiran.com", 47: "pantan.co", 48: "garmagostar.com", 49: "bermyco.com", 50: "mashalkave.com",
+  51: "steam.co.ir", 52: "farayandbokhar.com", 53: "pidemco.com", 54: "ipfarayand.com", 55: "fatehsanat.com",
+  56: "farabvalve.com", 57: "farinehmachine.com", 58: "thermochange.net", 59: "sharifgr.com", 60: "karasanat.com",
+  61: "emmc.ir", 62: "klevers-aryana.com", 63: "controlafzar.com", 64: "abanaircooler.com", 65: "kspcom.net",
+  66: "gastechiran.com", 67: "ab-band.com", 68: "pei.ir", 69: "sadid.ir", 70: "havayar.com",
+  71: "abaninnotech.com", 72: "machine-ajza.com", 73: "psrolling.com", 74: "machineroll.com", 75: "msa.ir",
+  76: "tasha-co.com", 77: "mfs-co.com", 78: "midhco.com", 79: "masabpooya.com", 80: "priamoonco.com",
+  81: "arokobioeng.com", 82: "saapec.com", 83: "mah-machine.com", 84: "pooyeshsakht.com", 85: "mapnabe.com",
+  86: "mapnasts.com", 87: "chamaan.com", 88: "mapnagenerator.com", 89: "damafin.com", 90: "klingeran.ir",
+  91: "hatco.ir", 92: "hava-filter.com", 93: "hilavis.com", 94: "euroslotpars.com", 95: "awring.co"
+};
+
+let db=null,current=1,activeUser=null,dirty=false,saving=false,modalInstance=null,lastSavedAt=null,lastExportAt=null,serverAckAt=null,currentVersion=0,changeChannel=null;
+let migratedLegacyPageKeys=[],migratedUsersKey=false,migratedSessionKey=false;
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)], pageInput=$('#pageNumber'),styleSelect=$('#styleSelect');
+if(!window.bootstrap){document.body.classList.add('bootstrap-fallback');window.bootstrap={Toast:{getOrCreateInstance(el){return{show(){el.classList.add('show');el.style.display='block';setTimeout(()=>{el.classList.remove('show');el.style.display=''},4200)}}}},Modal:{getOrCreateInstance(el){return{show(){el.classList.add('show');el.setAttribute('aria-hidden','false')},hide(){el.classList.remove('show');el.setAttribute('aria-hidden','true')}}}}};document.addEventListener('click',e=>{if(e.target.closest('[data-bs-dismiss="toast"]'))e.target.closest('.toast')?.classList.remove('show')})}
+const contactGrid=$('#contactGrid');
+contacts.forEach((name,i)=>{const item=document.createElement('div');item.className='contact-item';item.innerHTML=`<label>${name}</label><div class="quill-box" data-contact="${i}"><div class="qtoolbar"><button data-cmd="bold" title="درشت" type="button">B</button><button data-cmd="italic" title="خمیده" type="button"><i>I</i></button><button data-cmd="underline" title="زیرخط" type="button"><u>U</u></button><select data-cmd="fontName" title="قلم"><option value="Vazirmatn">وزیرمتن</option><option value="Tahoma">تاهما</option><option value="Arial">آریال</option></select><input type="color" data-cmd="foreColor" title="رنگ متن" value="#193247"><button data-cmd="createLink" title="پیوند" type="button">🔗</button><button data-cmd="removeFormat" title="پاک‌سازی" type="button">پاک‌سازی</button></div><div class="editor" contenteditable="false" data-placeholder-text="${name} را وارد کنید…"></div></div>`;contactGrid.append(item)});
+const tbody=$('#tableBody');
+for(let r=0;r<3;r++){const tr=document.createElement('tr');for(let c=0;c<3;c++){const td=document.createElement('td');td.contentEditable='false';td.setAttribute('data-cell',`${r}-${c}`);td.setAttribute('aria-label',`ردیف ${r+1} ستون ${c+1}`);td.innerHTML='<br>';tr.append(td)}tbody.append(tr)}
+
+function fa(x){return String(x).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d])}
+function setStatus(s,kind=''){const el=$('#status');el.className='status '+kind;el.lastElementChild.textContent=s}
+function toast(msg){if(String(msg).includes('??'))msg='درخواست انجام نشد؛ جزئیات یا وضعیت ذخیره‌سازی را بررسی کنید.';const el=$('#toast');$('#toastMessage').textContent=msg;bootstrap.Toast.getOrCreateInstance(el,{delay:4200}).show()}
+function requestResult(req){return new Promise((resolve,reject)=>{req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||new Error('خطای IndexedDB'))})}
+function transactionDone(tx){return new Promise((resolve,reject)=>{tx.oncomplete=()=>resolve();tx.onabort=tx.onerror=()=>reject(tx.error||new Error('تراکنش IndexedDB ناموفق بود'))})}
+function openDatabase(name,version,onUpgrade){return new Promise((resolve,reject)=>{let req;try{req=version===undefined?indexedDB.open(name):indexedDB.open(name,version)}catch(e){reject(e);return}req.onupgradeneeded=()=>onUpgrade(req.result,req.transaction);req.onblocked=()=>{setStatus('ارتقای دیتابیس به‌دلیل تب دیگر مسدود است','error');toast('تب‌های دیگر برنامه را ببندید و دوباره بارگذاری کنید.')};req.onerror=()=>reject(req.error||new Error('بازکردن IndexedDB ناموفق بود'));req.onsuccess=()=>resolve(req.result)})}
+function ensureStores(d){for(const [name,key] of [['pages','pageId'],['users','email'],['sessions','id'],['syncQueue','queueId'],['backups','backupId'],['settings','key']])if(!d.objectStoreNames.contains(name))d.createObjectStore(name,{keyPath:key})}
+async function openDB(){let opened=await openDatabase(DB_NAME,undefined,d=>ensureStores(d));const required=['pages','users','sessions','syncQueue','backups','settings'],missing=required.some(name=>!opened.objectStoreNames.contains(name)),pagesPath=opened.objectStoreNames.contains('pages')?opened.transaction(['pages'],'readonly').objectStore('pages').keyPath:null;if(missing||pagesPath!=='pageId'){const nextVersion=opened.version+1;opened.close();opened=await openDatabase(DB_NAME,nextVersion,(d,t)=>{if(d.objectStoreNames.contains('pages')&&t.objectStore('pages').keyPath!=='pageId'){const oldStore=t.objectStore('pages'),getAll=oldStore.getAll(),getKeys=oldStore.getAllKeys();let rows,keys;const migrate=()=>{if(!rows||!keys)return;d.deleteObjectStore('pages');const newPages=d.createObjectStore('pages',{keyPath:'pageId'}),backups=t.objectStore('backups');rows.forEach((row,index)=>{try{newPages.put(normalizePageRecord(row,Number(keys[index])))}catch(e){backups.put({backupId:crypto.randomUUID(),pageId:Number(keys[index])||null,createdAt:new Date().toISOString(),record:row,reason:'schema-migration-unmapped'})}})};getAll.onsuccess=()=>{rows=getAll.result||[];migrate()};getKeys.onsuccess=()=>{keys=getKeys.result||[];migrate()}}ensureStores(d)})}if(opened.transaction(['pages'],'readonly').objectStore('pages').keyPath!=='pageId'){opened.close();throw new Error('ساختار pages در دیتابیس موجود ناسازگار است؛ داده‌ها حفظ شده‌اند.')}db=opened;db.onversionchange=()=>{db.close();db=null;setStatus('نسخه دیتابیس تغییر کرده؛ صفحه را تازه‌سازی کنید','error')};await migrateLegacy();return db}
+function normalizePageRecord(r,id){const pageId=Number(r.pageId??r.id??id);if(!Number.isInteger(pageId)||pageId<1||pageId>TOTAL)throw new Error('شناسه صفحه خارج از محدوده است');return {...r,pageId,pageTitle:r.pageTitle||`صفحه ${pageId}`,introRichText:String(r.introRichText??r.intro??''),equipmentTable:Array.isArray(r.equipmentTable)?r.equipmentTable:Array.isArray(r.table)?r.table:Array(9).fill('<br>'),certificatesRichText:String(r.certificatesRichText??r.certificates??''),contactInfo:Array.isArray(r.contactInfo)?r.contactInfo:Array.isArray(r.contacts)?r.contacts:Array(7).fill(''),styleId:Math.max(1,Math.min(10,Number(r.styleId)||1)),createdAt:r.createdAt||new Date().toISOString(),updatedAt:r.updatedAt||new Date().toISOString(),version:Number(r.version)||1,lastEditedBy:r.lastEditedBy||'',syncStatus:r.syncStatus||'local_saved',pendingSync:r.pendingSync!==false,localBackup:r.localBackup??null}}
+function exportPageRecord(record){const page=normalizePageRecord(record);page.lastEditedBy='';page.localBackup=page.localBackup?{updatedAt:page.localBackup.updatedAt||null,version:Number(page.localBackup.version)||null}:null;return page}
+function readLegacyPages(){const map=new Map();migratedLegacyPageKeys=[];for(let i=1;i<=TOTAL;i++){try{const raw=localStorage.getItem(`page_backup_${i}`);if(raw){const rec=normalizePageRecord(JSON.parse(raw),i);map.set(i,rec);migratedLegacyPageKeys.push(i)}}catch(e){console.warn('Legacy page backup unreadable',i,e)}}return [...map.values()]}
+async function migrateLegacy(){
+  const legacyPages=readLegacyPages(),legacyUsers=(()=>{try{const v=JSON.parse(localStorage.getItem(USERS_KEY)||'[]');migratedUsersKey=Array.isArray(v)&&v.every(u=>u&&typeof u.email==='string');return Array.isArray(v)?v:[]}catch(e){migratedUsersKey=false;return []}})();
+  let oldPages=[];
+  try{const names=await new Promise((resolve,reject)=>{const req=indexedDB.open(LEGACY_DB);req.onupgradeneeded=()=>{req.transaction.abort()};req.onerror=()=>reject(req.error);req.onsuccess=()=>{const old=req.result;if(old.objectStoreNames.contains('pages')){const t=old.transaction('pages','readonly'),r=t.objectStore('pages').getAll();r.onsuccess=()=>{oldPages=r.result||[];old.close();resolve()};r.onerror=()=>{old.close();reject(r.error)}}else{old.close();resolve()}}});}catch(e){console.warn('Could not inspect legacy database',e)}
+  const merged=new Map(),migrationAlternates=[];for(const r of [...legacyPages,...oldPages]){try{const n=normalizePageRecord(r),p=merged.get(n.pageId);if(!p)merged.set(n.pageId,n);else if(JSON.stringify(p)!==JSON.stringify(n)){if(Date.parse(n.updatedAt)>Date.parse(p.updatedAt)){migrationAlternates.push(p);merged.set(n.pageId,n)}else migrationAlternates.push(n)}}catch(e){console.warn('Skipped invalid legacy page',e)}}
+  if(!db)throw new Error('دیتابیس در دسترس نیست');
+  const existingPages=await requestResult(tx('pages').objectStore('pages').getAll()),existingById=new Map(existingPages.map(r=>[r.pageId,r]));
+  const existingUsers=await requestResult(tx('users').objectStore('users').getAll()),existingEmails=new Set(existingUsers.map(u=>u.email));
+  const t=db.transaction(['pages','users','sessions','backups'],'readwrite'),done=transactionDone(t),pages=t.objectStore('pages'),users=t.objectStore('users'),backups=t.objectStore('backups');
+  for(const n of merged.values()){const existing=existingById.get(n.pageId);if(!existing)pages.put(n);else if(Date.parse(n.updatedAt)>Date.parse(existing.updatedAt))pages.put({...n,localBackup:existing});else if(JSON.stringify(n)!==JSON.stringify(existing))backups.put({backupId:crypto.randomUUID(),pageId:n.pageId,createdAt:new Date().toISOString(),record:n,reason:'legacy-conflict'})}for(const alternate of migrationAlternates)backups.put({backupId:crypto.randomUUID(),pageId:alternate.pageId,createdAt:new Date().toISOString(),record:alternate,reason:'legacy-conflict'});
+  for(const u of legacyUsers)if(u&&typeof u.email==='string'){const email=u.email.toLowerCase();if(!existingEmails.has(email))users.put({...u,email})}
+  const oldSession=(()=>{try{const value=JSON.parse(localStorage.getItem(SESSION_KEY)||'null');migratedSessionKey=!!(value&&value.email);return value}catch(e){migratedSessionKey=false;return null}})();if(oldSession&&oldSession.email)t.objectStore('sessions').put({id:'current',email:oldSession.email,pageNumber:oldSession.pageNumber,updatedAt:new Date().toISOString()});
+  await done;
+  try{for(const id of migratedLegacyPageKeys)localStorage.removeItem(`page_backup_${id}`);if(migratedUsersKey)localStorage.removeItem(USERS_KEY);if(migratedSessionKey)localStorage.removeItem(SESSION_KEY)}catch(e){console.warn('Legacy localStorage cleanup skipped',e)}
+}
+function tx(names,mode='readonly'){if(!db)throw new Error('IndexedDB در دسترس نیست');return db.transaction(names,mode)}
+function getRecord(id){return new Promise((resolve,reject)=>{try{const t=tx('pages');const r=t.objectStore('pages').get(Number(id));r.onsuccess=()=>resolve(r.result||null);r.onerror=()=>reject(r.error)}catch(e){reject(e)}})}
+async function allRecords(){const t=tx('pages');return await requestResult(t.objectStore('pages').getAll())}
+function html(id){return $(`[data-editor="${id}"] .editor`).innerHTML}
+function textFromHtml(s){const d=document.createElement('div');d.innerHTML=s||'';return d.innerText||d.textContent||''}
+function sanitizeHtml(value){const template=document.createElement('template');template.innerHTML=String(value||'');const allowed=new Set(['B','STRONG','I','EM','U','S','STRIKE','P','DIV','BR','UL','OL','LI','SPAN','FONT','A','BLOCKQUOTE']),walker=document.createTreeWalker(template.content,NodeFilter.SHOW_ELEMENT),nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);for(const el of nodes){if(!allowed.has(el.tagName)){el.replaceWith(...el.childNodes);continue}for(const a of [...el.attributes]){if(el.tagName==='A'&&a.name==='href'){try{const u=new URL(a.value,location.href);if(!['http:','https:','mailto:'].includes(u.protocol))el.removeAttribute(a.name);else el.setAttribute('rel','noopener noreferrer')}catch(_){el.removeAttribute(a.name)}}else if(el.tagName==='FONT'&&['color','size','face'].includes(a.name)){}else if(el.tagName==='SPAN'&&a.name==='style'){const safe=[];for(const declaration of a.value.split(';')){const sep=declaration.indexOf(':');if(sep<0)continue;const prop=declaration.slice(0,sep).trim().toLowerCase(),val=declaration.slice(sep+1).trim();const valid=(prop==='text-align'&&/^(left|right|center|justify)$/i.test(val))||(prop==='color'&&/^(#[0-9a-f]{3,8}|[a-z]{1,20}|rgba?\([0-9.,% ]+\))$/i.test(val))||(prop==='font-weight'&&/^(normal|bold|[1-9]00)$/i.test(val))||(prop==='font-style'&&/^(normal|italic)$/i.test(val))||(prop==='text-decoration'&&/^(none|underline|line-through)$/i.test(val))||(prop==='font-size'&&/^[0-9.]+(px|pt|em|rem|%)$/i.test(val))||(prop==='font-family'&&/^[a-z0-9 ,"'_-]{1,60}$/i.test(val));if(valid)safe.push(`${prop}:${val}`)}if(safe.length)el.setAttribute('style',safe.join(';'));else el.removeAttribute('style')}else el.removeAttribute(a.name)}}return template.innerHTML}
+function applyStyle(styleId){const s=Math.max(1,Math.min(10,Number(styleId)||1));document.body.dataset.style=s;styleSelect.value=s;$('#pageStyleBadge').textContent=`سبک این صفحه: ${fa(s)}`}
+const isEditor=()=>!!(activeUser&&Number(activeUser.pageNumber)===Number(current));
+function applyPermissions(){const canEdit=isEditor();$$('.editor,[data-cell]').forEach(el=>el.setAttribute('contenteditable',canEdit?'true':'false'));$$('.quill-box').forEach(box=>box.classList.toggle('ro',!canEdit));$$('#contactGrid .editor').forEach(el=>canEdit?el.setAttribute('data-placeholder',el.getAttribute('data-placeholder-text')||''):el.removeAttribute('data-placeholder'));styleSelect.disabled=false;const logged=!!activeUser;$('#loginBtn').classList.toggle('d-none',logged);$('#registerBtn').classList.toggle('d-none',logged);$('#logoutBtn').classList.toggle('d-none',!logged);if(logged){const nm=activeUser.fullname||activeUser.email||'کاربر';$('#logoutBtn').textContent=`خروج (${nm} - صفحه ${fa(activeUser.pageNumber)})`}}
+function snapshot(){return {introRichText:sanitizeHtml(html('intro')),equipmentTable:$$('[data-cell]').map(x=>sanitizeHtml(x.innerHTML)),certificatesRichText:sanitizeHtml(html('certificates')),contactInfo:$$('[data-contact] .editor').map(x=>sanitizeHtml(x.innerHTML)),styleId:+styleSelect.value}}
+try{if('BroadcastChannel' in window){changeChannel=new BroadcastChannel('iransei-page-changes');changeChannel.onmessage=e=>{const m=e.data;if(!m||m.pageId!==current)return;if(dirty){setStatus('تعارض نسخه؛ تغییرات فرم حفظ شده‌اند','error');toast('این صفحه در تب دیگری ذخیره شده است؛ فرم شما بازنویسی نمی‌شود.')}else loadPage(current).catch(err=>console.error(err))}}}catch(e){console.warn('Cross-tab notifications unavailable',e)}
+function markDirty(){if(!isEditor())return;dirty=true;setStatus('تغییرات ذخیره‌نشده','error')}
+function validatePage(rec){if(!Number.isInteger(rec.pageId)||rec.pageId<1||rec.pageId>TOTAL)throw new Error('شناسه صفحه نامعتبر است');if(!Array.isArray(rec.equipmentTable)||rec.equipmentTable.length!==9||!Array.isArray(rec.contactInfo)||rec.contactInfo.length!==7)throw new Error('ساختار جدول یا اطلاعات تماس ناسازگار است');rec.introRichText=sanitizeHtml(rec.introRichText);rec.equipmentTable=rec.equipmentTable.map(sanitizeHtml);rec.certificatesRichText=sanitizeHtml(rec.certificatesRichText);rec.contactInfo=rec.contactInfo.map(sanitizeHtml);return rec}
+async function saveNow(){if(saving)return false;if(!isEditor()){toast('برای ذخیره این صفحه باید وارد حساب همان صفحه شوید.');return false}saving=true;$('#saveLocalBtn').disabled=true;const now=new Date().toISOString();let conflict=false,savedRecord=null;try{const snap=snapshot(),t=tx(['pages','backups','syncQueue'],'readwrite'),done=transactionDone(t),pages=t.objectStore('pages'),backups=t.objectStore('backups'),queueStore=t.objectStore('syncQueue'),req=pages.get(current);req.onsuccess=()=>{try{const prior=req.result;if((Number(prior?.version)||0)>currentVersion){conflict=true;t.abort();return}const rec=validatePage(normalizePageRecord({...prior,...snap,pageId:current,createdAt:prior?.createdAt||now,updatedAt:now,version:(Number(prior?.version)||0)+1,lastEditedBy:activeUser.email||'',localBackup:prior?{updatedAt:prior.updatedAt,version:prior.version}:null,syncStatus:'local_saved',pendingSync:true})),queue={queueId:crypto.randomUUID(),pageId:current,operationType:prior?'update':'create',payload:rec,createdAt:now,attempts:0,lastAttemptAt:null,status:'pending',errorMessage:'',operationId:crypto.randomUUID(),localVersion:rec.version,baseServerVersion:prior?.serverVersion??null,nextRetryAt:null},backup={backupId:crypto.randomUUID(),pageId:current,createdAt:now,record:rec,reason:'save'};savedRecord=rec;pages.put(rec);backups.put(backup);queueStore.put(queue)}catch(e){try{t.abort()}catch(_){}console.error(e)}};await done;dirty=false;currentVersion=savedRecord.version;lastSavedAt=now;changeChannel?.postMessage({pageId:current,version:currentVersion,updatedAt:now});setStatus('ذخیره شد','ok');toast('تغییرات با موفقیت ذخیره شد.');renderStorageStatus();return true}catch(e){console.error(e);if(conflict){setStatus('تعارض نسخه؛ تغییرات فرم حفظ شده‌اند','error');toast('نسخه جدیدتری در تب دیگر ذخیره شده است. فرم شما حفظ شد؛ برای نگهداری جداگانه، خروجی اضطراری دانلود می‌شود.')}else{setStatus('خطا در ذخیره؛ تغییرات فرم حفظ شدند','error');toast('ذخیره ناموفق بود. فرم تغییر نکرده است؛ در صورت نیاز داده‌های فرم را خروجی بگیرید.')}downloadEmergencyPage();return false}finally{saving=false;$('#saveLocalBtn').disabled=false}}
+async function loadPage(n){n=Math.max(1,Math.min(TOTAL,Number(n)||1));current=n;pageInput.value=n;try{localStorage.setItem('industry_last_page',String(n))}catch(e){}$('#pageMeta').textContent='صفحه '+fa(n);dirty=false;const rec=await getRecord(n),d=rec?normalizePageRecord(rec):normalizePageRecord({pageId:n,table:Array(9).fill('<br>'),contacts:Array(7).fill(''),styleId:1});currentVersion=Number(rec?.version)||0;if(rec)lastSavedAt=rec.updatedAt||lastSavedAt;$('[data-editor="intro"] .editor').innerHTML=sanitizeHtml(d.introRichText);$$('[data-cell]').forEach((el,i)=>el.innerHTML=sanitizeHtml(d.equipmentTable[i]||'<br>'));$('[data-editor="certificates"] .editor').innerHTML=sanitizeHtml(d.certificatesRichText);$$('[data-contact] .editor').forEach((el,i)=>el.innerHTML=sanitizeHtml(d.contactInfo[i]||''));applyStyle(d.styleId);applyPermissions();setStatus(rec?'ذخیره محلی موجود است':'صفحه هنوز ذخیره نشده',rec?'ok':'');renderStorageStatus()}
+async function goToPage(n){if(dirty){const ok=confirm('تغییرات ذخیره‌نشده دارید. بدون ذخیره صفحه را عوض کنید؟');if(!ok)return}await loadPage(n)}
+function getUsers(){if(!db)return Promise.resolve([]);const t=tx('users');return requestResult(t.objectStore('users').getAll())}
+async function saveUsers(list){const t=tx('users','readwrite'),done=transactionDone(t),s=t.objectStore('users');for(const u of list)s.put(u);await done}
+async function exportBackupFile(silent=false){try{const [pages,storedSettings]=await Promise.all([allRecords(),requestResult(tx('settings').objectStore('settings').getAll())]);let lastPage=null;try{lastPage=localStorage.getItem('industry_last_page')}catch(e){}const settings=storedSettings.filter(x=>['theme','language','lastPage'].includes(x.key));if(lastPage!==null&&!settings.some(x=>x.key==='lastPage'))settings.push({key:'lastPage',value:lastPage});const exportedAt=new Date().toISOString(),data={schemaVersion:1,appId:'iransei-digital-book',exportedAt,pages:pages.map(exportPageRecord),settings};downloadJson(data,`iransei-backup-${exportedAt.replace(/[:.]/g,'-')}.json`);lastExportAt=exportedAt;try{const t=tx('settings','readwrite'),done=transactionDone(t);t.objectStore('settings').put({key:'lastExportAt',value:lastExportAt});await done}catch(e){console.warn('Could not persist export timestamp',e)}renderStorageStatus();if(!silent)toast('فایل پشتیبان JSON دانلود شد.');return true}catch(e){console.error(e);toast('ساخت فایل پشتیبان ناموفق بود.');return false}}
+function downloadJson(data,name){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function downloadEmergencyPage(){try{const rec=normalizePageRecord({...snapshot(),pageId:current,updatedAt:new Date().toISOString()});downloadJson({schemaVersion:1,appId:'iransei-digital-book',exportedAt:new Date().toISOString(),pages:[rec]},`iransei-emergency-page-${current}.json`)}catch(e){console.error('Emergency form export failed',e)}}
+function readFileText(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result));r.onerror=()=>reject(r.error||new Error('خواندن فایل ناموفق بود'));r.readAsText(file)})}
+$('#importFile').onchange=async e=>{const file=e.target.files[0];e.target.value='';if(!file)return;if(dirty&&!confirm('تغییرات فرم ذخیره نشده‌اند. ادامه بازیابی، این تغییرات را جایگزین می‌کند. ادامه می‌دهید؟'))return;try{if(file.size>20*1024*1024)throw new Error('حجم فایل بیش از ۲۰ مگابایت است');if(file.type&&!['application/json','text/json','text/plain'].includes(file.type)&&!file.name.toLowerCase().endsWith('.json'))throw new Error('نوع فایل پشتیبانی نمی‌شود');const parsed=JSON.parse(await readFileText(file)),isCurrent=parsed&&parsed.appId==='iransei-digital-book'&&[1].includes(parsed.schemaVersion)&&Array.isArray(parsed.pages),isLegacy=parsed&&Array.isArray(parsed.pages)&&!parsed.appId&&(parsed.exportDate||parsed.exportedAt);if(!isCurrent&&!isLegacy)throw new Error('قالب یا نسخه فایل پشتیبان پشتیبانی نمی‌شود');if(parsed.pages.length>TOTAL)throw new Error('تعداد صفحه‌ها بیش از محدوده مجاز است');const seen=new Set(),records=parsed.pages.map(r=>{const n=validatePage(normalizePageRecord(r));if(seen.has(n.pageId))throw new Error(`شناسه صفحه تکراری: ${n.pageId}`);seen.add(n.pageId);return n});if(!confirm(`بازیابی ${records.length} صفحه انجام شود؟ پیش از جایگزینی، از داده‌های موجود نسخه پشتیبان تهیه می‌شود.`))return;const existing=await allRecords(),t=tx(['pages','backups','syncQueue'],'readwrite'),done=transactionDone(t),pages=t.objectStore('pages'),backups=t.objectStore('backups'),queue=t.objectStore('syncQueue'),now=new Date().toISOString(),existingById=new Map(existing.map(r=>[r.pageId,r]));for(const old of existing)backups.put({backupId:crypto.randomUUID(),pageId:old.pageId,createdAt:now,record:old,reason:'pre-restore'});pages.clear();for(const imported of records){const old=existingById.get(imported.pageId),rec={...imported,createdAt:old?.createdAt||imported.createdAt,updatedAt:now,version:Math.max(Number(old?.version)||0,Number(imported.version)||0)+1,localBackup:old?{updatedAt:old.updatedAt,version:old.version}:imported.localBackup||null,pendingSync:true,syncStatus:'local_saved'};pages.put(rec);queue.put({queueId:crypto.randomUUID(),pageId:rec.pageId,operationType:old?'update':'create',payload:rec,createdAt:now,attempts:0,lastAttemptAt:null,status:'pending',errorMessage:'',operationId:crypto.randomUUID(),localVersion:rec.version,baseServerVersion:old?.serverVersion??null,nextRetryAt:null})}await done;const restoredLastPage=Array.isArray(parsed.settings)?Number(parsed.settings.find(x=>x.key==='lastPage')?.value):null;if(Number.isInteger(restoredLastPage)&&restoredLastPage>=1&&restoredLastPage<=TOTAL){try{localStorage.setItem('industry_last_page',String(restoredLastPage))}catch(e){console.warn('Could not restore last-page preference',e)}}dirty=false;await loadPage(Number.isInteger(restoredLastPage)&&restoredLastPage>=1&&restoredLastPage<=TOTAL?restoredLastPage:current);toast('بازیابی کامل شد.')}catch(err){console.error(err);toast(`بازیابی انجام نشد: ${err.message||'فایل نامعتبر است'}`)}};
+async function search(){const q=$('#searchInput').value.trim().toLocaleLowerCase('fa');if(!q){toast('عبارت جست‌وجو را وارد کنید.');return}const records=await allRecords(),matches=[],cols=['عنوان تجهیز / فعالیت','رفرنس‌ها','کاربرد در صنایع'];for(const r0 of records){const r=normalizePageRecord(r0),fields=[['معرفی شرکت',textFromHtml(r.introRichText)],...r.equipmentTable.map((x,j)=>[cols[j%3],textFromHtml(x)]),['گواهینامه‌ها',textFromHtml(r.certificatesRichText)],...r.contactInfo.map((x,j)=>[contacts[j],textFromHtml(x)])];for(const [section,text] of fields)if(text.toLocaleLowerCase('fa').includes(q))matches.push({page:r.pageId,section,text})}const list=$('#resultList');list.replaceChildren();if(!matches.length){const p=document.createElement('p');p.textContent='نتیجه‌ای پیدا نشد.';list.append(p)}matches.slice(0,100).forEach(m=>{const d=document.createElement('div');d.className='p-2 border-bottom';d.style.cursor='pointer';const strong=document.createElement('strong');strong.textContent=`صفحه ${fa(m.page)} — ${m.section}`;const span=document.createElement('div');span.className='text-muted small';span.textContent=m.text.slice(0,180);d.append(strong,span);d.onclick=()=>{$('#results').classList.remove('show');goToPage(m.page)};list.append(d)});$('#results').classList.add('show')}
+function csvEscape(v){let s=String(v??'').replace(/\r?\n/g,'\r\n');if(/^[\s\u0000-\u001f]*[=+\-@]/.test(s))s="'"+s;s=s.replace(/"/g,'""');return `"${s}"` }
+async function exportCsv(){const records=await allRecords(),rows=[['شماره صفحه','نوع داده','محتوا']];for(const r0 of records){const r=normalizePageRecord(r0);rows.push([r.pageId,'معرفی',textFromHtml(r.introRichText)]);for(let i=0;i<r.equipmentTable.length;i++)rows.push([r.pageId,`تجهیزات ${Math.floor(i/3)+1} - ${['عنوان تجهیز','رفرنس‌ها','کاربرد'][i%3]}`,textFromHtml(r.equipmentTable[i])]);rows.push([r.pageId,'گواهینامه‌ها',textFromHtml(r.certificatesRichText)]);r.contactInfo.forEach((v,i)=>rows.push([r.pageId,contacts[i],textFromHtml(v)]))}const csv='\ufeff'+rows.map(row=>row.map(csvEscape).join(',')).join('\r\n'),blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`iransei-pages-${new Date().toISOString().slice(0,10)}.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+async function renderStorageStatus(){const box=$('#storageDetails');if(!box)return;let dbText=db?'IndexedDB: آماده':'IndexedDB: در دسترس نیست',persistText='ذخیره‌سازی پایدار: بررسی…',estimate='مصرف فضا: نامشخص',queueCount=0,failed=0,lastBackup='ثبت نشده';try{if(navigator.storage?.persisted)persistText=await navigator.storage.persisted()?'ذخیره‌سازی پایدار فعال است':'ذخیره‌سازی پایدار تأیید نشده است؛ نسخه پشتیبان دانلود کنید';else persistText='مرورگر از این قابلیت پشتیبانی نمی‌کند';if(navigator.storage?.estimate){const e=await navigator.storage.estimate();if(e.quota)estimate=`مصرف تقریبی فضا: ${(e.usage/1048576||0).toFixed(1)} مگابایت از ${(e.quota/1048576).toFixed(1)} مگابایت`}if(db){const [q,b,settings]=await Promise.all([requestResult(tx('syncQueue').objectStore('syncQueue').getAll()),requestResult(tx('backups').objectStore('backups').getAll()),requestResult(tx('settings').objectStore('settings').getAll())]);if(!lastExportAt)lastExportAt=settings.find(x=>x.key==='lastExportAt')?.value||null;queueCount=q.filter(x=>['pending','sending'].includes(x.status)).length;failed=q.filter(x=>x.status==='failed').length;if(b.length)lastBackup=b.map(x=>x.createdAt).sort().pop()}}catch(e){dbText='خطا در خواندن وضعیت IndexedDB'}box.textContent=`${dbText} | ${persistText} | ${estimate} | صف در انتظار: ${fa(queueCount)} | ناموفق: ${fa(failed)} | آخرین ذخیره موفق: ${lastSavedAt||'نامشخص'} | آخرین تأیید همگام‌سازی سرور: ${serverAckAt||'هیچ‌گاه'} | آخرین Snapshot داخلی: ${lastBackup} | آخرین دانلود فایل پشتیبان: ${lastExportAt||'هنوز دانلود نشده'}`}
+async function requestPersistence(){try{if(!navigator.storage?.persisted||!navigator.storage?.persist){await renderStorageStatus();return}if(!await navigator.storage.persisted())await navigator.storage.persist();await renderStorageStatus()}catch(e){console.warn('Persistent storage request failed',e);await renderStorageStatus()}}
+async function showBackups(){try{const items=await requestResult(tx('backups').objectStore('backups').getAll());items.sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)));if(!items.length){toast('نسخه پشتیبانی ثبت نشده است.');return}const choice=prompt(items.slice(0,30).map((x,i)=>`${i+1}. صفحه ${fa(x.pageId)} — ${x.createdAt} (${x.reason})`).join('\n'),'1');if(choice===null)return;const item=items[Number(choice)-1];if(!item){toast('شماره انتخاب‌شده معتبر نیست.');return}downloadJson({schemaVersion:1,appId:'iransei-digital-book',exportedAt:new Date().toISOString(),pages:[exportPageRecord(item.record)]},`iransei-page-${item.pageId}-snapshot.json`)}catch(e){toast('خواندن نسخه‌های پشتیبان ناموفق بود.')}}
+async function syncNow(){toast('سرور همگام‌سازی پیکربندی نشده است؛ تغییرات در صف محلی باقی می‌مانند.');await renderStorageStatus()}
+
+function validateIndustrialImage(file){return new Promise(resolve=>{if(!file||!file.type.startsWith('image/'))return resolve({valid:false,message:'لطفاً یک فایل تصویر معتبر انتخاب کنید.'});const r=new FileReader();r.onload=e=>{const img=new Image();img.onload=()=>resolve({valid:true});img.onerror=()=>resolve({valid:false,message:'خطا در خواندن تصویر.'});img.src=e.target.result};r.onerror=()=>resolve({valid:false,message:'خواندن تصویر ناموفق بود.'});r.readAsDataURL(file)})}
+function openModal(mode){const modalEl=$('#authModal');modalInstance=bootstrap.Modal.getOrCreateInstance(modalEl);const signup=mode==='register';$('#modalTitle').textContent=signup?'ثبت‌نام':'ورود';if(signup){$('#formFields').innerHTML=`<div class="col-12"><label class="form-label fw-bold">شماره صفحه فعلی: ${fa(current)}</label></div><div class="col-12"><label for="f-fullname" class="form-label">نام و نام خانوادگی</label><input id="f-fullname" name="fullname" type="text" class="form-control form-control-sm" required></div><div class="col-12"><label for="f-email" class="form-label">پست الکترونیکی تجاری</label><input id="f-email" name="email" type="email" class="form-control form-control-sm" required></div><div class="col-md-6"><label for="f-password" class="form-label">گذرواژه</label><input id="f-password" name="password" type="password" minlength="10" maxlength="50" class="form-control form-control-sm" required></div><div class="col-md-6"><label for="f-confirm" class="form-label">تأیید گذرواژه</label><input id="f-confirm" name="confirm" type="password" minlength="10" maxlength="50" class="form-control form-control-sm" required></div><div class="col-12"><label for="f-photo" class="form-label">تصویر مرتبط با تجهیزات صنعتی</label><input id="f-photo" name="photo" type="file" accept="image/*" class="form-control form-control-sm" required></div>`}else{$('#formFields').innerHTML=`<div class="col-12"><label class="form-label fw-bold">ورود کاربر صفحه ${fa(current)}</label></div><div class="col-12"><label for="f-identity" class="form-label">پست الکترونیکی تجاری</label><input id="f-identity" name="identity" type="email" class="form-control form-control-sm" required></div><div class="col-12"><label for="f-password" class="form-label">گذرواژه</label><input id="f-password" name="password" type="password" class="form-control form-control-sm" required></div>`}$('#authForm').dataset.mode=mode;modalInstance.show()}
+async function startSession(user){activeUser=user;const t=tx('sessions','readwrite'),done=transactionDone(t);t.objectStore('sessions').put({id:'current',email:user.email||'',pageNumber:user.pageNumber,updatedAt:new Date().toISOString()});await done;if(modalInstance)modalInstance.hide();applyPermissions();setStatus('وارد شدید','ok');toast(`ورود موفقیت‌آمیز بود. اکنون امکان ویرایش صفحه ${fa(user.pageNumber)} را دارید.`)}
+$('#registerBtn').onclick=()=>openModal('register');$('#loginBtn').onclick=()=>openModal('login');$('#closeModal').onclick=$('#cancelModal').onclick=()=>modalInstance&&modalInstance.hide();
+$('#authForm').onsubmit=async e=>{e.preventDefault();const fd=new FormData(e.target),expectedDomain=(PAGE_DOMAINS[current]||'').toLowerCase();try{if(e.target.dataset.mode==='register'){const password=String(fd.get('password')||''),email=String(fd.get('email')||'').trim().toLowerCase();if(password.length<10||password.length>50||!/[a-z]/.test(password)||!/[A-Z]/.test(password)||!/[0-9]/.test(password)||!/[\W_]/.test(password)){toast('گذرواژه باید ۱۰ تا ۵۰ نویسه و شامل حروف بزرگ و کوچک، عدد و نماد باشد.');return}if(password!==fd.get('confirm')){toast('گذرواژه و تأیید آن یکسان نیستند.');return}if(email.split('@')[1]!==expectedDomain){toast('دامنه ایمیل با صفحه جاری مطابقت ندارد.');return}const users=await getUsers();if(users.some(u=>u.email===email)||users.some(u=>Number(u.pageNumber)===current)){toast('برای این ایمیل یا صفحه قبلاً حسابی ثبت شده است.');return}const file=$('#f-photo').files[0],validation=await validateIndustrialImage(file);if(!validation.valid){toast(validation.message);return}const photo=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=()=>reject(r.error);r.readAsDataURL(file)}),user={fullname:String(fd.get('fullname')||''),email,password,photo,pageNumber:current};await saveUsers([...users,user]);await startSession({...user,password:undefined})}else{const email=String(fd.get('identity')||'').trim().toLowerCase(),password=String(fd.get('password')||'');if(email.split('@')[1]!==expectedDomain){toast('دامنه ایمیل با صفحه جاری مطابقت ندارد.');return}const user=(await getUsers()).find(u=>u.email===email);if(!user||user.password!==password){toast('ایمیل یا گذرواژه نادرست است.');return}const {password:_,...safe}=user;await startSession(safe)}}catch(err){console.error(err);toast('عملیات ورود یا ثبت‌نام ناموفق بود.')}};
+$('#logoutBtn').onclick=async()=>{if(dirty&&!confirm('تغییرات ذخیره‌نشده دارید. بدون ذخیره خارج شوید؟'))return;try{const t=tx('sessions','readwrite'),done=transactionDone(t);t.objectStore('sessions').delete('current');await done;activeUser=null;applyPermissions();setStatus('حالت مشاهده');toast('از حساب خارج شدید.')}catch(e){toast('خروج ناموفق بود.')}};
+
+$$('.qtoolbar').forEach(tb=>tb.addEventListener('mousedown',e=>{if(e.target.closest('button'))e.preventDefault()}));
+document.addEventListener('input',e=>{if(e.target.matches('.editor,[data-cell]'))markDirty()});document.addEventListener('paste',e=>{const target=e.target.closest('.editor,[data-cell]');if(!target)return;e.preventDefault();const text=(e.clipboardData||window.clipboardData).getData('text/plain'),sel=window.getSelection();if(!sel.rangeCount)return;sel.deleteFromDocument();sel.getRangeAt(0).insertNode(document.createTextNode(text));sel.collapseToEnd();markDirty()});
+document.addEventListener('click',e=>{const link=e.target.closest('.editor a');if(link){try{if(!['http:','https:','mailto:'].includes(new URL(link.href,location.href).protocol))e.preventDefault()}catch(_){e.preventDefault()}}});
+document.addEventListener('click',e=>{if(!isEditor())return;const b=e.target.closest('[data-cmd]');if(!b)return;const box=b.closest('.quill-box'),ed=box?.querySelector('.editor');if(!ed||ed.getAttribute('contenteditable')!=='true')return;ed.focus();if(b.dataset.cmd==='createLink'){const url=prompt('نشانی پیوند را وارد کنید:');if(url)document.execCommand('createLink',false,url)}else if(b.tagName==='BUTTON')document.execCommand(b.dataset.cmd,false,null);markDirty()});
+document.addEventListener('change',e=>{if(e.target===styleSelect){applyStyle(styleSelect.value);if(isEditor())markDirty();return}if(!isEditor())return;const t=e.target;if(t.matches('[data-cmd="foreColor"],[data-cmd="fontSize"],[data-cmd="fontName"]')){const ed=t.closest('.quill-box')?.querySelector('.editor');if(ed?.getAttribute('contenteditable')==='true'){ed.focus();document.execCommand(t.dataset.cmd,false,t.value);markDirty()}}});
+$('#saveLocalBtn').onclick=saveNow;$('#syncBtn').onclick=syncNow;$('#csvBtn').onclick=exportCsv;$('#backupsBtn').onclick=showBackups;$('#prevBtn').onclick=()=>goToPage(current-1);$('#nextBtn').onclick=()=>goToPage(current+1);pageInput.onchange=()=>goToPage(pageInput.value);window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
+$('#exportBtn').onclick=async()=>{if(!await exportBackupFile(false))downloadEmergencyPage()};$('#searchBtn').onclick=search;$('#searchInput').onkeydown=e=>{if(e.key==='Enter')search()};$('#closeResults').onclick=()=>$('#results').classList.remove('show');
+(async()=>{try{await openDB();await requestPersistence();const t=tx('sessions');const s=await requestResult(t.objectStore('sessions').get('current'));if(s){const u=(await getUsers()).find(x=>x.email===s.email);if(u){const {password:_,...safe}=u;activeUser=safe}}let last=1;try{last=Number(localStorage.getItem('industry_last_page'))}catch(e){}await loadPage(Number.isInteger(last)&&last>=1&&last<=TOTAL?last:1);if(!activeUser)setStatus('حالت مشاهده');}catch(e){console.error(e);setStatus('ذخیره‌سازی در دسترس نیست','error');toast('IndexedDB در دسترس نیست؛ ذخیره محلی انجام نشد.');applyPermissions()} })();
+})();
+</script>
+</body>
+</html>
